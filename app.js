@@ -41,14 +41,9 @@ class Die {
     constructor() {
         this.div = document.createElement("div");
         this.div.className = "die";
-        this.roll();
-        this.div.addEventListener("dblclick", () => {
-            this.div.remove();
-            let i = dieArray.indexOf(this);
-            dieArray.splice(i, 1);
-        });
-        this.div.addEventListener("click", () => this.roll());
         dieContainer.appendChild(this.div);
+        this.roll();
+        this.div.addEventListener("click", () => this.roll());
         dieArray.push(this); //puts THIS object into the dieArray
     }
     
@@ -57,6 +52,11 @@ class Die {
         this.value = Math.floor(Math.random() * 20 + 1);
         this.div.innerHTML = ""
         let img = document.createElement("img");
+        img.addEventListener("dblclick", () => {
+            this.div.remove();
+            let i = dieArray.indexOf(this);
+            dieArray.splice(i, 1);
+        });
         this.div.appendChild(img);
         switch (this.value) {
             case 1:
