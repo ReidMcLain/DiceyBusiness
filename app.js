@@ -39,15 +39,19 @@ sumBtn.addEventListener('click', () => {
 
 class Die {
     constructor() {
-        this.div = document.createElement("div")
-        this.div.className = "die"
-        this.div.addEventListener("click", () => this.roll());
-        this.div.addEventListener("dblclick", () => this.div.remove());
-        dieContainer.appendChild(this.div);
+        this.div = document.createElement("div");
+        this.div.className = "die";
         this.roll();
+        this.div.addEventListener("dblclick", () => {
+            this.div.remove();
+            let i = dieArray.indexOf(this);
+            dieArray.splice(i, 1);
+        });
+        this.div.addEventListener("click", () => this.roll());
+        dieContainer.appendChild(this.div);
         dieArray.push(this); //puts THIS object into the dieArray
-        console.log(dieArray)
     }
+    
 
     roll() {
         this.value = Math.floor(Math.random() * 20 + 1);
