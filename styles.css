@@ -1,0 +1,26 @@
+html {
+    margin: 0;
+    background-image: url("./DND Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
+
+.BtnContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.dieContainer {
+  margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+     
+}
+
+.die {
+    height: 100px;
+    width: 100px;
+}
