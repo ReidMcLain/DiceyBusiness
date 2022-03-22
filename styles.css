@@ -23,3 +23,20 @@ body {
   height: 100px;
   width: 100px;
 }
+
+#rollBtn {
+  border-color: #702C91;
+  background-color: #702C91;
+}
+
+#rerollBtn {
+  border-color: #702C91;
+  background-color: #702C91;
+}
+
+#sumBtn {
+  border-color: #702C91;
+  background-color: #702C91;
+}
+
+
