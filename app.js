@@ -1,26 +1,8 @@
-const rollBtn = document.createElement("button");
-rollBtn.textContent = "Roll D20";
-document.body.appendChild(rollBtn);
-
-const rerollBtn = document.createElement("button");
-rerollBtn.textContent = "Reroll Die";
-document.body.appendChild(rerollBtn);
-
-const sumBtn = document.createElement("button");
-sumBtn.textContent = "Sum Die";
-document.body.appendChild(sumBtn);
-
-const BtnContainer = document.createElement("div");
-BtnContainer.className = "BtnContainer";
-document.body.appendChild(BtnContainer);
-
-BtnContainer.appendChild(rollBtn);
-BtnContainer.appendChild(rerollBtn);
-BtnContainer.appendChild(sumBtn);
-
-const dieContainer = document.createElement("div");
-dieContainer.className = "dieContainer";
-document.body.appendChild(dieContainer);
+let rollBtn = document.getElementById('rollBtn');
+let rerollBtn = document.getElementById('rerollBtn');
+let sumBtn = document.getElementById('sumBtn');
+let BtnContainer = document.getElementById('BtnContainer');
+let DieContainer = document.getElementById('DieContainer');
 
 let dieArray = [];
 
@@ -41,7 +23,7 @@ class Die {
     constructor() {
         this.div = document.createElement("div");
         this.div.className = "die";
-        dieContainer.appendChild(this.div);
+        DieContainer.appendChild(this.div);
         this.roll();
         this.div.addEventListener("click", () => this.roll());
         dieArray.push(this); //puts THIS object into the dieArray
